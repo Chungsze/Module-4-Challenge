@@ -89,9 +89,29 @@ var finances = [
 
 
 let months = finances.length;
+let total = 0;
+let change = 0;
+let average ;
+let net = 0;
+let netChangeSum = 0;
+let netArray = [];
+for (let index = 0; index < months; index++) {
+    console.log(finances[index][0]);
+    total+= finances[index][1];
+    change= finances[index][1]-net;
+    net = finances[index][1];
+    netArray.push(change);
+    console.log(netArray);
+    //console.log(`${index} Change: ${change}`);
+    //console.log(`${index} Net: ${net}`);
+
+
+}
 console.log(`
 Financial Analysis
 ================================================
 
-${months}`);
+Total months: ${months}
+Total amount: $${total}
+`);
 
