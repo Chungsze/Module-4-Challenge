@@ -101,17 +101,25 @@ for (let index = 0; index < months; index++) {
     change= finances[index][1]-net;
     net = finances[index][1];
     netArray.push(change);
-    console.log(netArray);
+    
     //console.log(`${index} Change: ${change}`);
     //console.log(`${index} Net: ${net}`);
 
 
 }
+
+for(let i = 0; i < netArray.length; i++) {
+   netChangeSum += netArray[i];
+   console.log(netChangeSum-finances[1]);
+}
+
+console.log(netArray);
 console.log(`
 Financial Analysis
 ================================================
 
 Total months: ${months}
 Total amount: $${total}
+Net Change Sum: $${netChangeSum}
 `);
 
