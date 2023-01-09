@@ -104,8 +104,7 @@ for (let index = 0; index < months; index++) {
     
     //console.log(`${index} Change: ${change}`);
     //console.log(`${index} Net: ${net}`);
-
-
+    console.log(`change: ${change}`);
 }
 
 for(let i = 0; i < netArray.length; i++) {
@@ -114,6 +113,7 @@ for(let i = 0; i < netArray.length; i++) {
 }
 
 console.log(netArray);
+
 console.log(`
 Financial Analysis
 ================================================
