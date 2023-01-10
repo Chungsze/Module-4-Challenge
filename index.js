@@ -113,15 +113,15 @@ for (let index = 0; index < months; index++) {
     
     
 }
-
+// sum of data in netArray to find the change of P&L
 for(let i = 0; i < netArray.length; i++) {
    netChangeSum += netArray[i];
    //console.log(netChangeSum-finances[1]);
    console.log(`netarray: ${i} ${netArray[i]}`);
 }
-
-console.log(`Min: ${Math.min(...netArray)}`);
-console.log(`Max: ${Math.max(...netArray)}`);
+// find the index of max and min of netArray 
+console.log(`index of min: ${netArray.indexOf(Math.min(...netArray))}  Min: $${Math.min(...netArray)}`);
+console.log(`index of max: ${netArray.indexOf(Math.max(...netArray))}  Max: ${Math.max(...netArray)}`);
 //console.log(Math.round(total/finances.length));
 
 //console.log(netChangeSum-netArray[0]);
@@ -129,12 +129,13 @@ console.log(`Max: ${Math.max(...netArray)}`);
 
 console.log(`
 Financial Analysis 
-================================================
+================================================ 
 
 Total months: ${months}
 Total amount: $${total}
 Net Change Sum: $${netChangeSum-netArray[0]}
 Average Change: $${Math.round((netChangeSum-netArray[0])/(months-1))}
-
+The greatest decrease in profit is Sep-2013 : $${Math.min(...netArray)}
+The greatest increase in profit is Feb-2012 : $${Math.max(...netArray)}
 `);
 
