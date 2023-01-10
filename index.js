@@ -100,7 +100,7 @@ let min = Infinity;
 
 
 for (let index = 0; index < months; index++) {
-    console.log(finances[index][0]);
+    
     total+= finances[index][1];
     change= finances[index][1]-net;
     net = finances[index][1];
@@ -108,6 +108,7 @@ for (let index = 0; index < months; index++) {
     
     //console.log(`${index} Change: ${change}`);
     //console.log(`${index} Net: ${net}`);
+    console.log(`Date: ${finances[index][0]}`);
     console.log(`finances: ${finances[index][1]}`);
     
     
@@ -121,7 +122,9 @@ for(let i = 0; i < netArray.length; i++) {
 
 console.log(`Min: ${Math.min(...netArray)}`);
 console.log(`Max: ${Math.max(...netArray)}`);
-console.log(Math.round(total/finances.length));
+//console.log(Math.round(total/finances.length));
+
+//console.log(netChangeSum-netArray[0]);
 
 
 console.log(`
@@ -130,8 +133,8 @@ Financial Analysis
 
 Total months: ${months}
 Total amount: $${total}
-Net Change Sum: $${netChangeSum}
-Average Change: $${Math.round(total/finances.length)}
+Net Change Sum: $${netChangeSum-netArray[0]}
+Average Change: $${Math.round((netChangeSum-netArray[0])/(months-1))}
 
 `);
 
